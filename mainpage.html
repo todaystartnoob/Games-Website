@@ -13,23 +13,33 @@
             padding-top: 70px;
         }
         .navbar {
-            background-color: rgba(255,255,255,0.5) !important;
+            background-color: rgba(255, 255, 255, 0.3) !important;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
+            padding: 10px 0;
         }
-        .navbar .nav-link, .navbar .navbar-brand {
-            color: black !important;
+        .navbar .nav-item p {
+            cursor: pointer;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 10px 15px;
+            color: rgba(0, 0, 0, 0.6);
+            transition: color 0.3s ease-in-out;
+        }
+        .navbar .nav-item p.active {
+            color: black;
+            font-weight: bold;
         }
         .hero {
             padding: 80px 5%;
             background-color: #fff;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-evenly;
             flex-wrap: wrap;
         }
         .hero .title {
@@ -50,20 +60,8 @@
             font-weight: bold;
             color: #26B5D7;
         }
-        .hero ul {
-            font-size: 1.5rem;
-            margin-top: 10px;
-            font-weight: 500;
-            padding-left: 0;
-            list-style: none;
-        }
-        .hero ul li::before {
-            content: "✔";
-            color: #007bff;
-            margin-right: 10px;
-        }
         .content {
-            min-height: 1500px;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -95,9 +93,6 @@
             .hero h2 {
                 font-size: 2rem;
             }
-            .hero ul {
-                font-size: 1.2rem;
-            }
         }
         @media (max-width: 480px) {
             .hero h1 {
@@ -105,9 +100,6 @@
             }
             .hero h2 {
                 font-size: 1.5rem;
-            }
-            .hero ul {
-                font-size: 1rem;
             }
         }
     </style>
@@ -122,10 +114,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">홈</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">게임</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">실적</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Q&A</a></li>
+                    <li class="nav-item"><p class="active" onclick="navigateTo('home')">홈</p></li>
+                    <li class="nav-item"><p onclick="navigateTo('games')">게임</p></li>
+                    <li class="nav-item"><p onclick="navigateTo('achievements')">실적</p></li>
+                    <li class="nav-item"><p onclick="navigateTo('qa')">Q&A</p></li>
                 </ul>
             </div>
         </div>
@@ -137,14 +129,17 @@
             <h2>상상을 실현하는 예술가들,</h2>
             <h1>GAMES</h1>
             <p>
-                아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
+                아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
+                아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
+                아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
+                아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
             </p>
         </div>
-        <img src="./IMAGES/게임즈 창업동아리 로고.png" alt="Sample Image">
+        <img src="./IMAGES/게임즈 창업동아리 로고.png">
     </div>
     
     <!-- Content -->
-    <div class="content">
+    <div id="page-content" class="content">
         여기에 내용을 추가하세요.
     </div>
     
@@ -154,6 +149,30 @@
             &copy; 2025 Game Club | All Rights Reserved
         </div>
     </footer>
+
+    <script>
+        function navigateTo(page) {
+            const content = document.getElementById('page-content');
+            const navItems = document.querySelectorAll('.nav-item p');
+
+            // 모든 메뉴 색을 연하게 변경
+            navItems.forEach(item => item.classList.remove('active'));
+
+            // 클릭된 메뉴 색을 진하게 변경
+            document.querySelector(`.nav-item p[onclick="navigateTo('${page}')"]`).classList.add('active');
+
+            // 페이지 내용 변경
+            if (page === 'home') {
+                content.innerHTML = "<p>홈 페이지입니다.</p>";
+            } else if (page === 'games') {
+                content.innerHTML = "<p>게임 페이지입니다.</p>";
+            } else if (page === 'achievements') {
+                content.innerHTML = "<p>실적 페이지입니다.</p>";
+            } else if (page === 'qa') {
+                content.innerHTML = "<p>Q&A 페이지입니다.</p>";
+            }
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
