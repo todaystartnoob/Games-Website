@@ -293,10 +293,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><p class="active" onclick="navigateTo('home')">홈</p></li>
-                    <li class="nav-item"><p onclick="navigateTo('games')">게임</p></li>
-                    <li class="nav-item"><p onclick="navigateTo('achievements')">실적</p></li>
-                    <li class="nav-item"><p onclick="navigateTo('qa')">Q&A</p></li>
+                    <li class="nav-item"><p class="active">홈</p></li>
+                    <li class="nav-item"><p onclick="navigateTo('games.html')">게임</p></li>
+                    <li class="nav-item"><p onclick="navigateTo('achievements.html')">실적</p></li>
+                    <li class="nav-item"><p onclick="navigateTo('Q&A.html')">Q&A</p></li>
                 </ul>
             </div>
         </div>
@@ -403,15 +403,11 @@
     </footer>
 
     <script>
+        // 페이지 이동 함수
         function navigateTo(page) {
-            const content = document.getElementById('page-content');
-            const navItems = document.querySelectorAll('.nav-item p');
-
-            navItems.forEach(item => item.classList.remove('active'));
-            document.querySelector(`.nav-item p[onclick="navigateTo('${page}')"]`).classList.add('active');
-
-            content.innerHTML = `<p>${page.toUpperCase()} 페이지입니다.</p>`;
+            window.location.href = page;
         }
+
         window.addEventListener("scroll", function() {
             let scrollPos = window.scrollY;
             let row1 = document.querySelector(".row-1");
