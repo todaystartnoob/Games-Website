@@ -26,7 +26,7 @@
             cursor: pointer;
             font-size: 1.2rem;
             margin: 0;
-            padding: 10px 15px;
+            padding: 15px 30px;
             color: rgba(0, 0, 0, 0.6);
             transition: color 0.3s ease-in-out;
         }
@@ -70,10 +70,46 @@
         .footer {
             background-color: #333;
             color: white;
-            text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
         }
-        /* Responsive Design */
+        .footerContainer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            flex-wrap: wrap;
+        }
+        .footLogoContainer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .footLogo {
+            width: 50px;
+        }
+        .footText {
+            display: flex;
+            flex-direction: column;
+        }
+        .footText p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        .footQRContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .QRs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        .QR {
+            width: 50px;
+        }
         @media (max-width: 992px) {
             .hero {
                 flex-direction: column;
@@ -100,6 +136,16 @@
             }
             .hero h2 {
                 font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .footerContainer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .footLogoContainer {
+                flex-direction: column;
             }
         }
     </style>
@@ -131,8 +177,6 @@
             <p>
                 아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
                 아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
-                아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
-                아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....아 뭐라 쓸말이 없네....
             </p>
         </div>
         <img src="./IMAGES/게임즈 창업동아리 로고.png">
@@ -145,8 +189,22 @@
     
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            &copy; 2025 Game Club | All Rights Reserved
+        <div class="footerContainer">
+            <div class="footLogoContainer">
+                <img class="footLogo" src="./IMAGES/게임즈 창업동아리 로고.png" alt="Logo">
+                <div class="footText">
+                    <p>상상을 실현하는 예술가들</p>
+                    <p>GAMES</p>
+                </div>
+            </div>
+            <div class="footQRContainer">
+                <div class="QRs">
+                    <img class="QR" src="./IMAGES/게임즈 일동 노션.png" alt="Notion">
+                    <img class="QR" src="./IMAGES/게임즈 창동 노션 qr.png" alt="Notion QR">
+                    <img class="QR" src="./IMAGES/게임즈 창동 인스타.png" alt="Instagram">
+                </div>
+                <p>&copy; 2009-2025 GAMES | All Rights Reserved</p>
+            </div>
         </div>
     </footer>
 
@@ -155,22 +213,10 @@
             const content = document.getElementById('page-content');
             const navItems = document.querySelectorAll('.nav-item p');
 
-            // 모든 메뉴 색을 연하게 변경
             navItems.forEach(item => item.classList.remove('active'));
-
-            // 클릭된 메뉴 색을 진하게 변경
             document.querySelector(`.nav-item p[onclick="navigateTo('${page}')"]`).classList.add('active');
 
-            // 페이지 내용 변경
-            if (page === 'home') {
-                content.innerHTML = "<p>홈 페이지입니다.</p>";
-            } else if (page === 'games') {
-                content.innerHTML = "<p>게임 페이지입니다.</p>";
-            } else if (page === 'achievements') {
-                content.innerHTML = "<p>실적 페이지입니다.</p>";
-            } else if (page === 'qa') {
-                content.innerHTML = "<p>Q&A 페이지입니다.</p>";
-            }
+            content.innerHTML = `<p>${page.toUpperCase()} 페이지입니다.</p>`;
         }
     </script>
 
