@@ -60,8 +60,75 @@
             font-weight: bold;
             color: #26B5D7;
         }
+
+        .showourprojects {
+            text-align: center;
+            margin: 100px 0;
+            position: relative;
+        }
+
+        .projects-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* 한 줄이 화면 너비보다 50% 더 길게 */
+        .project-row {
+            display: flex;
+            width: 150%;
+            gap: 10px;
+        }
+
+        /* 2번째 줄을 왼쪽으로 더 밀어서 끝이 안 보이게 */
+        .row-2 {
+            position: relative;
+            left: -10vw;
+        }
+
+        /* 빈 박스 스타일 */
+        .project-item {
+            width: 200px; /* 적당한 크기 */
+            height: 120px;
+            background-color: #26B5D7;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        /* 반응형 */
+        @media (max-width: 992px) {
+            .project-row {
+                width: 180%;
+            }
+            .row-2 {
+                transform: translateX(-15%); /* 작은 화면에서 더 왼쪽으로 밀기 */
+            }
+            .project-item {
+                width: 100px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-row {
+                width: 200%;
+            }
+            .row-2 {
+                transform: translateX(-20%); /* 모바일에서 더 왼쪽으로 밀기 */
+            }
+            .project-item {
+                width: 80px;
+                height: 60px;
+            }
+        }
+
         .content {
-            min-height: 100vh;
+            min-height: 200vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -182,6 +249,74 @@
         <img src="./IMAGES/게임즈 창업동아리 로고.png">
     </div>
     
+    <div class="showourprojects">
+        <h2 style="margin: 0 80vh 5vh 0; font-weight: bold;">저희 게임즈는 지금까지</h2>
+        <div class="projects-container">
+            <div class="projects">
+                <!-- 1번째 줄 (왼쪽 이동) -->
+                <div class="project-row row-1">
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                </div>
+    
+                <!-- 2번째 줄 (오른쪽 이동) -->
+                <div class="project-row row-2">
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                </div>
+    
+                <!-- 3번째 줄 (왼쪽 이동) -->
+                <div class="project-row row-3">
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                    <span class="project-item"></span>
+                </div>
+            </div>
+        </div>
+        <h2 style="margin: 5vh 0 0 50vw; font-weight: bold;"><span style="color:#26B5D7">(몇개냐)개</span>의 게임을 제작했습니다!</h2>
+    </div>
+    
+    
+       
+    
     <!-- Content -->
     <div id="page-content" class="content">
         여기에 내용을 추가하세요.
@@ -194,7 +329,7 @@
                 <img class="footLogo" src="./IMAGES/게임즈 창업동아리 로고.png" alt="Logo">
                 <div class="footText">
                     <p>상상을 실현하는 예술가들</p>
-                    <p>GAMES</p>
+                    <p style="font-weight: bold;">GAMES</p>
                 </div>
             </div>
             <div class="footQRContainer">
@@ -218,6 +353,16 @@
 
             content.innerHTML = `<p>${page.toUpperCase()} 페이지입니다.</p>`;
         }
+        window.addEventListener("scroll", function() {
+            let scrollPos = window.scrollY;
+            let row1 = document.querySelector(".row-1");
+            let row2 = document.querySelector(".row-2");
+            let row3 = document.querySelector(".row-3");
+
+            row1.style.transform = `translateX(${-(scrollPos * 0.1)}px)`; // 왼쪽 이동
+            row2.style.transform = `translateX(${(scrollPos * 0.1)}px)`;  // 오른쪽 이동
+            row3.style.transform = `translateX(${-(scrollPos * 0.1)}px)`; // 왼쪽 이동
+        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
