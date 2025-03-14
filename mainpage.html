@@ -88,7 +88,7 @@
         /* 2번째 줄을 왼쪽으로 더 밀어서 끝이 안 보이게 */
         .row-2 {
             position: relative;
-            left: -10vw;
+            left: -30vw;
         }
 
         /* 빈 박스 스타일 */
@@ -98,6 +98,51 @@
             background-color: #26B5D7;
             border-radius: 10px;
             display: inline-block;
+        }
+
+        .showourprojects {
+            text-align: center;
+            margin: 100px 0;
+            position: relative;
+        }
+
+        /* 상단 텍스트 위치 조정 */
+        .showourprojects h2:first-of-type {
+            position: relative;
+            top: -20px;  /* 위로 띄우기 */
+            left: -20%;  /* 왼쪽으로 이동 */
+        }
+
+        /* 하단 텍스트 위치 조정 */
+        .showourprojects h2:last-of-type {
+            position: relative;
+            top: 20px;  /* 아래로 내리기 */
+            right: -20%;  /* 오른쪽으로 이동 */
+        }
+
+        /* 반응형 - 작은 화면에서는 이동 값 줄이기 */
+        @media (max-width: 992px) {
+            .showourprojects h2:first-of-type {
+                top: -15px;
+                left: -10%;
+            }
+
+            .showourprojects h2:last-of-type {
+                top: 15px;
+                right: -10%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .showourprojects h2:first-of-type {
+                top: -10px;
+                left: -5%;
+            }
+
+            .showourprojects h2:last-of-type {
+                top: 10px;
+                right: -5%;
+            }
         }
 
         /* 반응형 */
@@ -250,7 +295,7 @@
     </div>
     
     <div class="showourprojects">
-        <h2 style="margin: 0 80vh 5vh 0; font-weight: bold;">저희 게임즈는 지금까지</h2>
+        <h2 style="font-weight: bold;">저희 게임즈는 지금까지</h2>
         <div class="projects-container">
             <div class="projects">
                 <!-- 1번째 줄 (왼쪽 이동) -->
@@ -311,7 +356,7 @@
                 </div>
             </div>
         </div>
-        <h2 style="margin: 5vh 0 0 50vw; font-weight: bold;"><span style="color:#26B5D7">(몇개냐)개</span>의 게임을 제작했습니다!</h2>
+        <h2 style="font-weight: bold;"><span style="color:#26B5D7">(몇개냐)개</span>의 게임을 제작했습니다!</h2>
     </div>
     
     
