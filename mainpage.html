@@ -225,6 +225,86 @@
             }
         }
 
+        .presentation-section {
+            text-align: center;
+            margin-top: 250px; /* 유튜브와의 간격 */
+            margin-bottom: 200px; /* 아래 여백 넉넉하게 */
+        }
+
+        .presentation-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .presentation-section img {
+            max-width: 80%; /* 기본 크기 */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px; /* 이미지 아래 간격 */
+        }
+
+        .presentation-section p {
+            font-size: 1.2rem;
+            max-width: 70%;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* 반응형 - 화면 크기에 따라 조정 */
+        @media (max-width: 1200px) {
+            .presentation-section {
+                margin-top: 200px;
+                margin-bottom: 180px;
+            }
+            .presentation-section img {
+                max-width: 85%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .presentation-section {
+                margin-top: 150px;
+                margin-bottom: 150px;
+            }
+            .presentation-section img {
+                max-width: 90%;
+            }
+            .presentation-section p {
+                font-size: 1.1rem;
+                max-width: 80%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .presentation-section {
+                margin-top: 120px;
+                margin-bottom: 120px;
+            }
+            .presentation-section img {
+                max-width: 95%;
+            }
+            .presentation-section p {
+                font-size: 1rem;
+                max-width: 85%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .presentation-section {
+                margin-top: 100px;
+                margin-bottom: 100px;
+            }
+            .presentation-section img {
+                max-width: 100%;
+            }
+            .presentation-section p {
+                font-size: 0.9rem;
+                max-width: 90%;
+            }
+        }
+
         .content {
             min-height: 50vh;
             display: flex;
@@ -417,11 +497,13 @@
         </div>
     </div>    
        
-    
-    <!-- Content -->
-    <div id="page-content" class="content">
-        여기에 내용을 추가하세요.
+    <div class="presentation-section">
+        <h2 style="font-weight: bold;">2024년 사업 기획 발표</h2>
+        <img src="./IMAGES/게임즈 발표.png" alt="게임 발표 이미지">
+        <p>작년 <span style="font-weight: bold;">게임즈는</span> 게임을 <span style="font-weight: bold;">기획및 개발</span>하고 이를 직접 <span style="font-weight: bold;">발표</span>하는 소중한 경험을 했습니다.<br>
+            많은 사람들에게 <span style="font-weight: bold;">우리의 게임</span>을 소개했습니다.</p>
     </div>
+    
     
     <!-- Footer -->
     <footer class="footer">
