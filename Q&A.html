@@ -37,6 +37,12 @@
         .navbar .nav-item p.active {
             color: black;
             font-weight: bold;
+            transform: scale(1.2);
+        }
+
+        .navbar .nav-item p:not(.active):hover {
+            transition: all 0.5s;
+            color: rgba(0,0,0,0.8);
         }
 
         /* Q&A 섹션 */
