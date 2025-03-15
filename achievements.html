@@ -105,93 +105,111 @@
         /* 수상 세트 */
         .award-set {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 15px;
-            padding: 30px;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
             border-radius: 10px;
             background-color: #f5f5f5;
             width: 60%;
         }
 
-        /* 상 이미지 크기 증가 */
-        .award-set .award-image {
-            width: 300px;
-            height: 200px; /* 세로 길이 확장 */
-            background-color: #ccc; /* 빈 박스 */
+        /* 왼쪽 이미지 */
+        .award-image {
+            width: 250px;
+            height: 180px;
+            background-color: #ccc;
             border-radius: 10px;
+            flex-shrink: 0;
         }
 
-        /* 연도에 데이터가 없을 때 */
-        .no-data {
+        /* 오른쪽 텍스트 영역 */
+        .award-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            flex-grow: 1;
+        }
+
+        /* 대회 이름 */
+        .award-info h3 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        /* 대회 설명 */
+        .award-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        /* 상 이름 */
+        .award-info .award-title {
             font-size: 1.2rem;
-            color: #777;
-            padding: 50px 0;
+            font-weight: bold;
+            color: #26B5D7;
         }
 
         /* 반응형 */
         @media (max-width: 1200px) {
-            .achievements-section {
-                margin: 80px 30px;
-            }
-            .year-selector {
-                max-width: 450px;
-            }
             .award-set {
                 width: 75%;
             }
-            .award-set .award-image {
-                width: 280px;
-                height: 190px;
+            .award-image {
+                width: 220px;
+                height: 160px;
             }
         }
 
         @media (max-width: 992px) {
-            .achievements-section {
-                margin: 60px 20px;
-            }
-            .year-selector {
-                max-width: 400px;
-            }
             .award-set {
                 width: 85%;
             }
-            .award-set .award-image {
-                width: 250px;
-                height: 180px;
+            .award-image {
+                width: 200px;
+                height: 140px;
+            }
+            .award-info h3 {
+                font-size: 1.3rem;
+            }
+            .award-info p {
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 768px) {
-            .achievements-section {
-                margin: 50px 15px;
-            }
-            .year-selector {
-                max-width: 350px;
-            }
             .award-set {
+                flex-direction: column;
+                align-items: center;
                 width: 95%;
+                text-align: center;
             }
-            .award-set .award-image {
-                width: 220px;
-                height: 160px;
+            .award-image {
+                width: 180px;
+                height: 130px;
             }
-            .no-data {
-                font-size: 1rem;
-                padding: 40px 0;
+            .award-info {
+                text-align: center;
             }
         }
 
         @media (max-width: 480px) {
-            .year-selector {
-                max-width: 300px;
-            }
             .award-set {
                 width: 100%;
             }
-            .award-set .award-image {
-                width: 200px;
-                height: 150px;
+            .award-image {
+                width: 160px;
+                height: 120px;
+            }
+            .award-info h3 {
+                font-size: 1.2rem;
+            }
+            .award-info p {
+                font-size: 0.9rem;
             }
         }
 
@@ -318,7 +336,7 @@
                     <img class="QR" src="./IMAGES/게임즈 창동 노션 qr.png" alt="Notion QR">
                     <img class="QR" src="./IMAGES/게임즈 창동 인스타.png" alt="Instagram">
                 </div>
-                <p>&copy; 2009-2025 GAMES | All Rights Reserved</p>
+                <p>&copy; GAMES All Rights Reserved</p>
             </div>
         </div>
     </footer>
@@ -421,15 +439,18 @@
                     container.innerHTML += `
                         <div class="award-set">
                             <div class="award-image"></div>
-                            <h3>${award.competition}</h3>
-                            <p>${award.award}</p>
+                            <div class="award-info">
+                                <h3>${award.competition}</h3>
+                                <p>${award.description}</p>
+                                <p class="award-title">${award.award}</p>
+                            </div>
                         </div>
                     `;
                 });
             } else {
                 container.innerHTML = `
                     <div class="no-data">데이터가 남아있지 않습니다.</div>
-                    <div style="height: 250px;"></div>
+                    <div style="height: 353.7px;"></div> <!-- 푸터와의 여백 추가 -->
                 `;
             }
         }
