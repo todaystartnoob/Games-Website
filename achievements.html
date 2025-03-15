@@ -536,6 +536,18 @@
                 }
             ]
         };
+        
+        // 상 이름에 따른 색상 매핑
+        const awardColors = {
+            "금상": "#FFD700",   // 금색
+            "은상": "#A9A9A9",   // 은색
+            "동상": "#CD7F32",   // 동색
+            "대상": "#FF4500",   // 강렬한 주황색
+            "최우수상": "#FF5733",  // 선명한 빨강색
+            "우수상": "#6495ED",  // 연한 파랑색
+            "장려상": "#8A2BE2",  // 보라색
+            "특별상": "#32CD32"   // 연한 녹색
+        };
 
         // 현재 연도 자동 선택
         let currentYear = new Date().getFullYear();
@@ -556,6 +568,9 @@
 
             if (awardsData[year]) {
                 awardsData[year].forEach(award => {
+                    // 상 이름에 따른 색상 가져오기 (기본값은 검은색)
+                    let awardColor = awardColors[award.award] || "#333";
+
                     container.innerHTML += `
                         <div class="award-set">
                             <div class="award-image">
@@ -564,7 +579,7 @@
                             <div class="award-info">
                                 <h3>${award.competition}</h3>
                                 <p>${award.description}</p>
-                                <p class="award-title">${award.award}</p>
+                                <p class="award-title" style="color: ${awardColor};">${award.award}</p>
                             </div>
                         </div>
                     `;
