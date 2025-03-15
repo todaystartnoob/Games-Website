@@ -20,7 +20,7 @@
             top: 0;
             left: 0;
             z-index: 1000;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(12px);
             padding: 10px 0;
         }
         .navbar .nav-item p {
@@ -390,7 +390,7 @@
             let row3 = document.querySelector(".row-3");
 
             row1.style.transform = `translateX(${-(scrollPos * 0.12)}px)`; // 왼쪽 이동
-            row2.style.transform = `translateX(${(scrollPos * 0.005)}%)`;  // 오른쪽 이동 + 더 왼쪽으로 밀기
+            row2.style.transform = `translateX(${(scrollPos * 0.008)}%)`;  // 오른쪽 이동 + 더 왼쪽으로 밀기
             row3.style.transform = `translateX(${-(scrollPos * 0.14)}px)`; // 왼쪽 이동
         });
     </script>
