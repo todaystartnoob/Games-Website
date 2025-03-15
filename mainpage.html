@@ -56,6 +56,32 @@
             flex: 1;
             max-width: 40%;
             height: auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* 반응형 */
+        @media (max-width: 1200px) {
+            .hero img {
+                max-width: 35%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero img {
+                max-width: 30%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero img {
+                max-width: 28%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero img {
+                max-width: 25%;
+            }
         }
         .hero h2 {
             font-size: 3rem;
