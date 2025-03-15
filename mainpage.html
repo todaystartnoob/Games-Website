@@ -169,8 +169,57 @@
             }
         }
 
+        .youtube-section {
+            text-align: center;
+            margin: 300px 50px; /* 위, 아래 여백 */
+            position: relative;
+        }
+
+        .youtube-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px; /* 제목 아래 간격 */
+        }
+
+        .youtube-container {
+            position: relative;
+            max-width: 1218px; /* 원래 크기 유지 */
+            margin: 0 auto; /* 중앙 정렬 */
+            aspect-ratio: 16 / 9; /* 비율 유지 */
+        }
+
+        .youtube-container iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; /* 살짝 둥글게 */
+        }
+
+        /* 반응형 - 작은 화면에서는 크기 조정 */
+        @media (max-width: 1200px) {
+            .youtube-container {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .youtube-section h2 {
+                font-size: 1.8rem;
+            }
+            .youtube-container {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .youtube-section h2 {
+                font-size: 1.6rem;
+            }
+            .youtube-container {
+                width: 100%;
+            }
+        }
+
         .content {
-            min-height: 200vh;
+            min-height: 50vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -284,7 +333,7 @@
             <h2>상상을 실현하는 예술가들,</h2>
             <h1>GAMES</h1>
             <p>
-                GAMES는 유니티를 사용하여 게임을 개발하는 2009년부터 운영해온 한국디지털미디어고등학교의 최장수 동아리로 다양한 기획들을 세우고 실현하고 있습니다!
+                <span style="font-weight: bold;">GAMES</span>는 <span style="font-weight: bold;">유니티</span>를 사용하여 게임을 개발하는 2009년부터 운영해온 <span style="font-weight: bold;">한국디지털미디어고등학교의 최장수 동아리</span>로 다양한 기획들을 세우고 실현하고 있습니다!
             </p>
         </div>
         <img src="./IMAGES/게임즈 창업동아리 로고.png">
@@ -348,7 +397,18 @@
         <h2 style="font-weight: bold;">저희 게임즈는 현재까지 <span style="color:#26B5D7">39개</span>의 게임을 제작했습니다!</h2>
     </div>
     
-    
+    <div class="youtube-section">
+        <h2 style="font-weight: bold;">우리의 <span style="font-weight: 900; color:#26B5D7">게임을</span> 영상으로 만나보세요!</h2>
+        <div class="youtube-container">
+            <iframe width="1218" height="685" src="https://www.youtube.com/embed/MV5C8RACufY" 
+                title="한국 상위 0.1% 쌉천재 고등학교에서 만든 게임" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>    
        
     
     <!-- Content -->
