@@ -118,9 +118,15 @@
         .award-image {
             width: 250px;
             height: 180px;
-            background-color: #ccc;
             border-radius: 10px;
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .award-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* 오른쪽 텍스트 영역 */
@@ -358,63 +364,95 @@
             row2.style.transform = `translateX(${(scrollPos * 0.005)}%)`;  // 오른쪽 이동 + 더 왼쪽으로 밀기
             row3.style.transform = `translateX(${-(scrollPos * 0.14)}px)`; // 왼쪽 이동
         });
-        // 수상 실적 데이터 (연도별로 배열 저장)
+        // 수상 실적 데이터 (연도별로 배열 저장, 이미지 URL 추가)
         const awardsData = {
             2012: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
+                { 
+                    competition: "SK 플래닛 특성화고 앱 경진 대회", 
+                    description: "뭐하는 곳임?", 
+                    award: "은상", 
+                    image: "./IMAGES/contests/2012-1.webp" 
+                },
+                { 
+                    competition: "SK 플래닛 특성화고 앱 경진 대회", 
+                    description: "뭐하는 곳임?", 
+                    award: "장려상", 
+                    image: "./IMAGES/contests/2012-1.webp" 
+                },
+                { 
+                    competition: "글로벌 게임제작 경진대회", 
+                    description: "뭐하는 곳임?", 
+                    award: "금상", 
+                    image: "./IMAGES/contests/2012-2.webp" 
+                },
+                { 
+                    competition: "글로벌 게임제작 경진대회", 
+                    description: "뭐하는 곳임?", 
+                    award: "장려상", 
+                    image: "./IMAGES/contests/2012-2.webp" 
+                },
+                { 
+                    competition: "제 1회 서강게임캠프", 
+                    description: "뭐하는 곳임?", 
+                    award: "대상", 
+                    image: "./IMAGES/contests/2012-3.webp" 
+                }
             ],
             2015: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
+                { 
+                    competition: "?대회", 
+                    description: "설명 추가 필요", 
+                    award: "?상", 
+                    image: "./IMAGES/2015_award1.webp" 
+                }
             ],
             2016: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
-            ],
+                { 
+                    competition: "?대회", 
+                    description: "설명 추가 필요", 
+                    award: "?상", 
+                    image: "./IMAGES/2015_award1.jpg" 
+                }
+            ], // 동일한 구조로 추가
             2017: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
+                { 
+                    competition: "?대회", 
+                    description: "설명 추가 필요", 
+                    award: "?상", 
+                    image: "./IMAGES/2015_award1.jpg" 
+                }
             ],
             2018: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
+                { 
+                    competition: "?대회", 
+                    description: "설명 추가 필요", 
+                    award: "?상", 
+                    image: "./IMAGES/2015_award1.jpg" 
+                }
             ],
             2019: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
+                { 
+                    competition: "?대회", 
+                    description: "설명 추가 필요", 
+                    award: "?상", 
+                    image: "./IMAGES/2015_award1.jpg" 
+                }
             ],
             2022: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
+                { 
+                    competition: "?대회", 
+                    description: "설명 추가 필요", 
+                    award: "?상", 
+                    image: "./IMAGES/2015_award1.jpg" 
+                }
             ],
             2024: [
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" },
-                { competition: "?대회", award: "?상" }
+                { 
+                    competition: "?대회", 
+                    description: "설명 추가 필요", 
+                    award: "?상", 
+                    image: "./IMAGES/2015_award1.jpg" 
+                }
             ]
         };
 
@@ -439,7 +477,9 @@
                 awardsData[year].forEach(award => {
                     container.innerHTML += `
                         <div class="award-set">
-                            <div class="award-image"></div>
+                            <div class="award-image">
+                                <img src="${award.image}" alt="${award.competition} 이미지">
+                            </div>
                             <div class="award-info">
                                 <h3>${award.competition}</h3>
                                 <p>${award.description}</p>
