@@ -388,17 +388,6 @@
         function navigateTo(page) {
             window.location.href = page;
         }
-
-        window.addEventListener("scroll", function() {
-            let scrollPos = window.scrollY;
-            let row1 = document.querySelector(".row-1");
-            let row2 = document.querySelector(".row-2");
-            let row3 = document.querySelector(".row-3");
-
-            row1.style.transform = `translateX(${-(scrollPos * 0.12)}px)`; // 왼쪽 이동
-            row2.style.transform = `translateX(${(scrollPos * 0.005)}%)`;  // 오른쪽 이동 + 더 왼쪽으로 밀기
-            row3.style.transform = `translateX(${-(scrollPos * 0.14)}px)`; // 왼쪽 이동
-        });
         // 수상 실적 데이터 (연도별로 배열 저장, 이미지 URL 추가)
         const awardsData = {
             2012: [

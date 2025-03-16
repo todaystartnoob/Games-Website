@@ -109,7 +109,7 @@
 
         /* 호버 시 배경 변경 */
         .qa-item:hover {
-            background: #ebebeb;
+            background: rgba(0,204,255,0.5);
         }
 
         /* Q&A 답변 (처음에는 높이 0, 애니메이션 적용) */
@@ -117,7 +117,6 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-            background: #eaeaea;
             border-radius: 5px;
             padding: 0 15px;
         }
@@ -209,27 +208,27 @@
         <div class="qa-list">
             <div class="qa-item" onclick="toggleAnswer(0)">
                 <p><strong>Q. 게임 개발 경험이 없어도 가입할 수 있나요?</strong></p>
-                <div class="qa-answer">네! 게임 개발을 처음 접하는 분들도 환영합니다. 배우면서 성장할 수 있어요.</div>
+                <div class="qa-answer">A. 네! 게임 개발을 처음 접하는 분들도 환영합니다. 배우면서 성장할 수 있어요. 게임즈는 열정이 넘치는 분들을 기다립니다!</div>
             </div>
             <div class="qa-item" onclick="toggleAnswer(1)">
                 <p><strong>Q. 사용하는 개발 도구는 무엇인가요?</strong></p>
-                <div class="qa-answer">저희는 주로 Unity 엔진을 사용합니다.</div>
+                <div class="qa-answer">A. 저희는 주로 Unity 엔진을 사용합니다.</div>
             </div>
             <div class="qa-item" onclick="toggleAnswer(2)">
                 <p><strong>Q. 팀 프로젝트는 어떻게 진행되나요?</strong></p>
-                <div class="qa-answer">팀별로 역할을 나누어 협업하며, 정기적인 회의를 통해 피드백을 주고받습니다.</div>
+                <div class="qa-answer">A. 팀별로 기획, 개발, 아트 담당을 나누어 협업하며, 정기적인 회의를 통해 피드백을 주고받습니다.</div>
             </div>
             <div class="qa-item" onclick="toggleAnswer(3)">
                 <p><strong>Q. 게임을 실제로 출시하나요?</strong></p>
-                <div class="qa-answer">네! 저희는 스팀에 게임을 배포합니다.</div>
+                <div class="qa-answer">A. 네! 저희는 스팀에 게임을 배포합니다.</div>
             </div>
             <div class="qa-item" onclick="toggleAnswer(4)">
                 <p><strong>Q. 대회나 행사에 참가하나요?</strong></p>
-                <div class="qa-answer">네! 게임잼이나 레드불, 플레이엑스포에 참가합니다.</div>
+                <div class="qa-answer">A. 네! 게임잼이나 레드불, 플레이엑스포같은 행사나 대회에 참가합니다! 실적 부분을 참고해 주세요!</div>
             </div>
             <div class="qa-item" onclick="toggleAnswer(5)">
-                <p><strong>Q. 굿즈를 판매하나요?</strong></p>
-                <div class="qa-answer">네! 스티커와 로드맵 강의, 키링이나 마우스 패드를 판매할 계획입니다.</div>
+                <p><strong>Q. 기타 문의 사항은 어디에 연락하면 되나요?</strong></p>
+                <div class="qa-answer">A. 기타 문의 사항은 @dimi_games_ 게임즈 인스타그램에 DM 주시면 빠르게 답장해드리겠습니다!</div>
             </div>
         </div>
     </section>
