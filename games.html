@@ -159,15 +159,16 @@
             color: #555;
         }
 
-        /* 유니티 게임 컨테이너 (가로로 넓히고 높이 확장) */
+        /* 유니티 게임을 1920x1080 비율로 유지하면서 반응형 적용 */
         .unity-container {
             position: relative;
             width: 100%;
-            max-width: 1200px;
-
+            max-width: 1920px;
+            aspect-ratio: 16 / 9; /* 1920x1080 비율 유지 */
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
 
         /* 유니티 게임 iframe */
@@ -179,49 +180,43 @@
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
         }
 
+        /* 반응형 조정 */
+        @media (max-width: 1600px) {
+            .unity-container {
+                max-width: 1600px;
+            }
+        }
 
-        /* 반응형 */
         @media (max-width: 1200px) {
-            .game-set {
-                width: 98%;
-                height: 800px;
+            .unity-container {
+                max-width: 1200px;
             }
         }
 
         @media (max-width: 992px) {
-            .unity-set {
-                height: 600px;
-            }
-            .game-set p {
-                font-size: 1.1rem;
+            .unity-container {
+                max-width: 900px;
             }
         }
 
         @media (max-width: 768px) {
-            .game-set {
-                padding: 30px;
-                height: 500px;
-            }
-            .game-set h3 {
-                font-size: 1.8rem;
-            }
-            .game-set p {
-                font-size: 1rem;
+            .unity-container {
+                max-width: 720px;
             }
         }
 
-        @media (max-width: 480px) {
-            .game-set {
-                padding: 20px;
-                height: 400px;
-            }
-            .game-set h3 {
-                font-size: 1.6rem;
-            }
-            .game-set p {
-                font-size: 0.95rem;
+        @media (max-width: 576px) {
+            .unity-container {
+                max-width: 480px;
             }
         }
+
+        @media (max-width: 360px) {
+            .unity-container {
+                max-width: 320px;
+            }
+        }
+
 
         .footer {
             background-color: #333;
@@ -370,9 +365,9 @@
                     unityUrl: "https://play.unity.com/en/games/2a98ff9b-0bf7-4709-8ae8-f9e2545a882c/reverse-realm", // 여기에 유니티 게임 iframe URL 넣기
                 },
                 {
-                    name: "마법학교의 검술교사가 되었습니다",
-                    description: "마법학교에서 검술을 가르치는 교사가 되어 모험을 떠나는 RPG 게임입니다.",
-                    unityUrl: "https://your-unity-game-link.com", // 여기에 유니티 게임 iframe URL 넣기
+                    name: "der krudders",
+                    description: "광부 시뮬레이션",
+                    unityUrl: "https://play.unity.com/en/games/2c127933-ff65-4c5f-9d1e-256e2fa5b2ee/der-krudders", // 여기에 유니티 게임 iframe URL 넣기
                 },
                 {
                     name: "마법학교의 검술교사가 되었습니다",
