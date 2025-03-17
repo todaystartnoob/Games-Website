@@ -28,7 +28,7 @@
             font-size: 1.2rem;
             margin: 0;
             padding: 15px 30px;
-            color: rgba(0, 0, 0, 0.6);
+            color: rgba(0,0,0,0.6);
             transition: color 0.3s ease-in-out;
         }
         .navbar .nav-item p.active {
@@ -465,7 +465,7 @@
     <!-- Top Navigation -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <img src="./IMAGES/게임즈 창업 동아리 블랙.png" alt="Banner Icon" style="max-width: 5vw;">
+            <img src="./IMAGES/게임즈 창업 동아리 회색.png" alt="Banner Icon" style="max-width: 5vw;">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -583,9 +583,9 @@
             </div>
             <div class="footQRContainer">
                 <div class="QRs">
-                    <img class="QR" src="./IMAGES/게임즈 일동 노션.png" alt="Notion">
-                    <img class="QR" src="./IMAGES/게임즈 창동 노션 qr.png" alt="Notion QR">
-                    <img class="QR" src="./IMAGES/게임즈 창동 인스타.png" alt="Instagram">
+                    <img class="QR" id="notionQR1" src="./IMAGES/게임즈 일동 노션.png" alt="Notion" style="cursor: pointer;">
+                    <img class="QR" id="notionQR2" src="./IMAGES/게임즈 창동 노션 qr.png" alt="Notion QR" style="cursor: pointer;">
+                    <img class="QR" id="instaQR" src="./IMAGES/게임즈 창동 인스타.png" alt="Instagram" style="cursor: pointer;">
                 </div>
                 <p>&copy; GAMES All Rights Reserved</p>
             </div>
@@ -607,6 +607,26 @@
             row1.style.transform = `translateX(${-(scrollPos * 0.14)}px)`; // 왼쪽 이동
             row2.style.transform = `translateX(${(scrollPos * 0.14)}px)`;  // 오른쪽 이동 + 더 왼쪽으로 밀기
             row3.style.transform = `translateX(${-(scrollPos * 0.14)}px)`; // 왼쪽 이동
+        });
+        
+        let notionQR1 = document.getElementById('notionQR1');
+        let notionQR2 = document.getElementById('notionQR2');
+        let instaQR = document.getElementById('instaQR');
+
+        // 이미지에 클릭 이벤트 리스너 추가
+        notionQR1.addEventListener('click', function() {
+            // 사용자를 원하는 URL로 리디렉션
+            window.open('https://www.notion.so/GAMES-1830f95ca09280499357d0b193ca13ec', '_blank');
+        });
+                // 이미지에 클릭 이벤트 리스너 추가
+        notionQR2.addEventListener('click', function() {
+            // 사용자를 원하는 URL로 리디렉션
+            window.open('https://www.notion.so/2024-GAMES-1830f95ca092806e994dc4fb85ead9fa', '_blank');
+        });
+                // 이미지에 클릭 이벤트 리스너 추가
+        instaQR.addEventListener('click', function() {
+            // 사용자를 원하는 URL로 리디렉션
+            window.open('https://www.instagram.com/dimi_games_/', '_blank');
         });
     </script>
 
