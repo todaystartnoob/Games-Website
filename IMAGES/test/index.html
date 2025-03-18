@@ -31,8 +31,8 @@
         var targetAspectRatio = 16 / 10;
 
         if (windowAspectRatio > targetAspectRatio) {
-          canvas.style.width = (window.innerHeight * targetAspectRatio) + 'px';
           canvas.style.height = window.innerHeight + 'px';
+          canvas.style.width = (window.innerHeight * targetAspectRatio) + 'px';
         } else {
           canvas.style.width = window.innerWidth + 'px';
           canvas.style.height = (window.innerWidth / targetAspectRatio) + 'px';
